@@ -1,0 +1,124 @@
+.train-filter {
+  width: 360px;
+  background: var(--primary-dark);
+
+  .train-filter__date {
+    padding-top: 36px;
+    padding-left: 29px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .train-filter__date-item {
+      .UIDatePicker {
+        margin-top: 8px;
+
+        .MuiInputBase-root {
+          height: 36px;
+        }
+      }
+    }
+  }
+
+  .train-filter__divider {
+    background: white;
+    height: 1px;
+    margin: 30px 0;
+  }
+
+  .train-filter__options {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    .train-filter__option-item {
+      display: flex;
+      margin: 0 39px 0 69px;
+      justify-content: space-between;
+
+      .train-filter__option-text {
+        padding-top: 8px;
+      }
+    }
+  }
+
+  .train-filter__price {
+    padding-left: 32px;
+
+    .train-filter__price-text {
+
+    }
+
+    .train-filter__price-label {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 40px;
+    }
+  }
+
+  .train-filter__to {
+    padding-left: 32px;
+
+    .train-filter__toTitle {
+      display: flex;
+      gap: 20px;
+    }
+
+    .train-filter__to-plus {
+      margin-left: auto;
+      padding-right: 32px;
+      cursor: pointer;
+    }
+
+    .train-filter__toFilters {
+      height: calc(100% - 65px);
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-right: 32px;
+
+      .train-filter__toArrival {
+        .font-24 {
+          text-align: end;
+        }
+      }
+    }
+  }
+
+  .train-filter__from {
+    padding-left: 32px;
+    padding-bottom: 30px;
+
+    .train-filter__fromTitle {
+      display: flex;
+      gap: 20px;
+    }
+
+    .train-filter__from-plus {
+      margin-left: auto;
+      padding-right: 32px;
+      cursor: pointer;
+    }
+
+    .train-filter__toFilters {
+      height: calc(100% - 65px);
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-right: 32px;
+
+      .train-filter__toArrival {
+        .font-24 {
+          text-align: end;
+        }
+      }
+    }
+  }
+
+  .train-filter__plusActive {
+    height: 260px;
+  }
+}

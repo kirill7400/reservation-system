@@ -1,0 +1,70 @@
+.last-tickets {
+  width: 359px;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .last-tickets__title {
+    margin-bottom: 23px;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  .last-tickets__item {
+    width: inherit;
+    height: 161px;
+    border: 1px solid #C4C4C4;
+    background: #FFF;
+    box-shadow: 0 2px 2px 0 rgba(62, 60, 65, 0.25);
+    padding: 18px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    .last-tickets__city {
+      display: flex;
+      justify-content: space-between;
+
+      .last-tickets__city-left {
+        .font-16 {
+          width: 105px;
+        }
+      }
+
+      .last-tickets__city-right {
+        div {
+          text-align: end;
+        }
+
+        .font-16 {
+          width: 105px;
+        }
+      }
+    }
+
+    .last-tickets__bottom {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        margin-top: auto;
+      }
+
+      .last-tickets__num {
+        display: flex;
+        gap: 5px;
+
+        .font-16 {
+          margin-top: auto;
+        }
+
+        .last-tickets__num-price {
+          color: var(--primary);
+          height: 44px;
+        }
+      }
+    }
+  }
+}

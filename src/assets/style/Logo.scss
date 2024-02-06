@@ -1,0 +1,144 @@
+.logo {
+  .main-logo {
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+
+    .main-logo__text {
+      box-sizing: border-box;
+      padding-left: 12%;
+      padding-top: 9px;
+      height: 64px;
+      font-size: 36px;
+      color: white;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .main-logo__menu {
+      box-sizing: border-box;
+      background: rgba(41, 41, 41, 1);
+      height: 94px;
+      display: flex;
+      gap: 50px;
+      padding-left: 12%;
+      padding-top: 28px;
+
+      .main-logo__menu-item {
+        font-size: 30px;
+        color: white;
+        font-weight: 300;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+
+    .main-logo__main {
+      height: 574px;
+      margin-top: auto;
+      display: flex;
+      gap: 100px;
+      padding: 0 15%;
+
+      .main-logo__tagline {
+        font-size: 72px;
+        color: white;
+        font-weight: 100;
+      }
+
+      .main-logo__main-inputs {
+        box-sizing: border-box;
+        height: inherit;
+        min-width: 729px;
+        background: rgba(41, 41, 41, 0.7);
+        padding: 50px 20px;
+
+        .main-logo__main-inputs-text {
+          font-size: 30px;
+          color: white;
+          font-weight: 300;
+          margin-top: 40px;
+        }
+
+        .main-logo__main-inputs-item {
+          margin-top: 8px;
+          display: flex;
+          justify-content: space-between;
+
+          .UIInput-div {
+            width: 45%;
+
+            .UIInput {
+              width: 100%;
+            }
+          }
+
+
+          .UIDatePicker {
+            width: 45%;
+          }
+        }
+      }
+    }
+
+    .main-logo__train {
+      padding: 0 247px;
+      margin-top: auto;
+      height: 350px;
+      display: flex;
+      justify-content: center;
+
+      .main-logo__train-inputs {
+        width: inherit;
+        display: flex;
+        height: inherit;
+        background-color: rgba(41, 41, 41, 0.69);
+        padding: 28px 44px;
+        box-sizing: border-box;
+        justify-content: space-between;
+        gap: 15px;
+
+        .main-logo__train-container {
+          .main-logo__train-input {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+
+            .UISelect {
+              width: 325px;
+            }
+
+            .UIDatePicker {
+              width: 325px;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1650px) {
+      .main-logo__main {
+        flex-direction: column;
+        margin: 0;
+        height: 100%;
+      }
+    }
+  }
+
+  .main {
+    height: 985px;
+    background-image: url('../image/logo_back.png');
+    background-color: #000;
+  }
+
+  .train {
+    height: 596px;
+    background-image: url('../image/train.png');
+    background-color: #000;
+    box-shadow: inset 0 0 0 1000px rgba(81, 81, 232, 0.1);
+  }
+}

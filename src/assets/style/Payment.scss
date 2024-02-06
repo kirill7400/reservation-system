@@ -1,0 +1,83 @@
+.payment {
+  background: var(--background);
+
+  .payment__main {
+    width: 1405px;
+    display: flex;
+    margin: 95px auto;
+    gap: 86px;
+
+    .paymentData {
+      width: 959px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .paymentData__item {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+        background: #fff;
+
+        .paymentData__itemTitle {
+          background: #f9f9f9;
+          padding: 40px 20px;
+          display: flex;
+
+          .font-30 {
+            color: #292929;
+            margin-left: 20px;
+          }
+        }
+
+        .paymentData__itemBody {
+          padding-bottom: 30px;
+          border-top: 1px dashed #928f94;
+          border-bottom: 1px dashed #928f94;
+
+          .paymentData__itemBody-fio {
+            padding: 25px 30px 25px 30px;
+            display: flex;
+            justify-content: space-between;
+
+            .UIInput {
+              .MuiInputBase-root {
+                width: 280px;
+                height: 50px;
+              }
+            }
+          }
+
+          .paymentData__itemBody-typePay {
+            padding: 25px 30px 25px 30px;
+            display: flex;
+            flex-direction: column;
+
+            .paymentData__itemBody-typePayVar {
+              margin-top: 30px;
+              display: flex;
+              justify-content: space-between;
+
+              .font-24 {
+                font-weight: 700;
+                font-size: 24px;
+                color: #292929;
+              }
+            }
+          }
+        }
+
+        .paymentData__itemBody-typeCash {
+          padding: 25px 30px 25px 30px;
+        }
+
+
+      }
+
+      .paymentData-btn {
+        margin-top: 50px;
+        display: flex;
+        justify-content: flex-end;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

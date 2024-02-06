@@ -1,0 +1,25 @@
+.train-list {
+  width: 959px;
+
+  .train-list__filters {
+    display: flex;
+    justify-content: space-between;
+
+    .train-list__sort {
+      display: flex;
+      gap: 5px;
+
+      .UISelect {
+        height: 23px;
+        font-size: 12px;
+        background: var(--background);
+      }
+    }
+  }
+
+  .train-list__items {
+    width: 959px;
+    box-sizing: border-box;
+    margin-top: 47px;
+  }
+}

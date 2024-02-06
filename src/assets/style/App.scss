@@ -1,0 +1,164 @@
+:root {
+  --primary: rgba(255, 168, 0, 1);
+  --primary-dark: #3E3C41;
+  --background: #F7F5F9;
+}
+
+.font-16 {
+  color: #928F94;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.font-18 {
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.font-20 {
+  color: #292929;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.font-24 {
+  color: #E5E5E5;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.font-30 {
+  color: #FFF;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.font-32 {
+  color: #E5E5E5;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.font-36 {
+  color: #E5E5E5;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.UIInput-div {
+
+  .UIInput-label {
+    font-weight: 400;
+    font-size: 15px;
+    color: #928f94;
+    margin-bottom: 5px;
+  }
+
+  .UIInput {
+    .MuiInputBase-root {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.UISelect-div {
+  .UISelect {
+    background-color: white;
+    color: black;
+  }
+
+  .UISelect-label {
+    font-weight: 400;
+    font-size: 15px;
+    color: #928f94;
+    margin-bottom: 5px;
+  }
+}
+
+.UIDatePicker {
+  .MuiInputBase-root {
+    background-color: white;
+    color: black;
+  }
+}
+
+.UISlider {
+  .MuiSlider-thumb {
+    background-color: white;
+  }
+
+  .MuiSlider-thumb:hover {
+    box-shadow: 0 0 0 8px rgba(255, 168, 0, 0.16);
+  }
+
+  .MuiSlider-thumb:focus {
+    box-shadow: 0 0 0 8px rgba(255, 168, 0, 0.16);
+  }
+
+  .Mui-focusVisible {
+    box-shadow: 0 0 0 8px rgba(255, 168, 0, 0.16) !important;
+  }
+
+  .MuiSlider-valueLabelOpen {
+    top: 44px;
+    background: none;
+  }
+
+  .MuiSlider-rail {
+    height: 12px;
+    border: 1px solid white;
+    background-color: var(--primary-dark);
+  }
+
+  .MuiSlider-track {
+    height: 12px;
+    background-color: var(--primary);
+    border: none;
+  }
+}
+
+.UIButton.MuiButton-containedPrimary:active {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  height: 36.5px;
+}
+
+.UIPagination {
+
+  .MuiPagination-ul {
+    .Mui-selected {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .MuiButtonBase-root:hover {
+      border-color: var(--primary);
+      background-color: white;
+    }
+  }
+
+}
+
+.UICheckbox {
+  .Mui-checked {
+    color: var(--primary) !important;
+  }
+}

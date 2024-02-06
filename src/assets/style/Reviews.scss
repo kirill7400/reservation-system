@@ -1,0 +1,44 @@
+.main-reviews {
+  padding: 110px 250px;
+
+  .main-reviews__logo {
+    color: #292929;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .main-reviews__cards {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+
+    .main-reviews__card {
+      width: 600px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .main-reviews__card-text {
+        .main-reviews__card-header {
+          color: #000;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        .main-reviews__card-review {
+          margin-top: 20px;
+          color: #928F94;
+          font-size: 16px;
+          font-style: italic;
+          font-weight: 300;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}

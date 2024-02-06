@@ -1,0 +1,10 @@
+.passengers {
+  background: var(--background);
+
+  .passengers__main {
+    width: 1405px;
+    display: flex;
+    margin: 95px auto;
+    gap: 86px;
+  }
+}

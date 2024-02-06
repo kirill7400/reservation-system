@@ -1,0 +1,126 @@
+.tripDetail {
+  width: 360px;
+  background: var(--primary-dark);
+
+  .tripDetail__title {
+    padding: 30px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .tripDetail__divider {
+    background-color: white;
+    height: 1px;
+    margin: 30px 0;
+  }
+
+  .tripDetail__to {
+    .tripDetail__toTitle {
+      display: flex;
+      padding: 0 32px;
+      justify-content: space-between;
+
+      .font-16 {
+        color: white;
+        padding-top: 10px;
+      }
+
+      .tripDetail__to-plus {
+        cursor: pointer;
+      }
+    }
+
+    .tripDetail__toInfo {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      padding: 0 32px;
+
+      .tripDetail__toInfo-item {
+        display: flex;
+        justify-content: space-between;
+
+        .font-16 {
+          text-align: end;
+          color: white;
+        }
+
+        .font-18 {
+          color: #E5E5E5;
+        }
+
+        .font-24 {
+          color: white;
+        }
+
+        .tripDetail__toInfo-cityInfoLeft, .tripDetail__toInfo-cityInfoRight {
+          .font-18 {
+            color: #928F94;
+            width: 120px;
+          }
+
+          .city {
+            color: white;
+          }
+        }
+
+        .tripDetail__toInfo-cityInfoRight {
+          text-align: end;
+        }
+      }
+
+      .tripDetail__toInfo-itemTime {
+        margin-top: 35px;
+        display: flex;
+        justify-content: space-between;
+
+        .font-18 {
+          color: #928F94
+        }
+
+        .font-24 {
+          padding-top: 20px;
+        }
+      }
+
+      .tripDetail__toInfo-itemPassengers {
+        display: flex;
+        justify-content: space-between;
+
+        .font-18 {
+          color: #e5e5e5;
+        }
+
+        .font-24 {
+          color: #fff;
+          font-weight: 700;
+
+          .ruble {
+            color: #928F94;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  .tripDetail__total {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 32px 30px 32px;
+
+    .font-30 {
+      text-transform: uppercase;
+    }
+
+    .total {
+      color: var(--primary);
+    }
+
+    .ruble {
+      font-weight: 400;
+      color: white;
+    }
+  }
+}

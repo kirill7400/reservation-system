@@ -1,0 +1,18 @@
+.train-selection {
+  background: var(--background);
+
+  .train-selection__main {
+    width: 1405px;
+    display: flex;
+    margin: 95px auto;
+    gap: 86px;
+
+    .train-selection__main-rightMenu {
+      .UIPagination {
+        margin-top: 150px;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

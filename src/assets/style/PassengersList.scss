@@ -1,0 +1,140 @@
+.passengersList {
+  width: 959px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .passengersList__item {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+    background: #fff;
+
+    .passengersList__itemTitle {
+      background: #f9f9f9;
+      padding: 40px 20px;
+      display: flex;
+
+      .passengersList__itemHide {
+        cursor: pointer;
+      }
+
+      .font-30 {
+        color: #292929;
+        margin-left: 20px;
+      }
+
+      .close {
+        font-size: 30px;
+        margin-left: auto;
+      }
+    }
+
+    .passengersList__itemBody {
+      .passengersList__itemBody-ticketType {
+        padding: 40px 30px 25px 30px;
+
+        .UISelect {
+          width: 280px;
+          height: 50px;
+        }
+      }
+
+      .passengersList__itemBody-fio {
+        padding: 25px 30px 25px 30px;
+        display: flex;
+        justify-content: space-between;
+
+        .UIInput {
+          .MuiInputBase-root {
+            width: 280px;
+            height: 50px;
+          }
+        }
+      }
+
+      .passengersList__itemBody-data {
+        padding: 25px 30px 25px 30px;
+        display: flex;
+        gap: 20px;
+
+        .UIToggleButton {
+          width: 200px;
+
+          .MuiButtonBase-root {
+            width: 100px;
+            font-size: 26px;
+            font-weight: 700;
+            color: black;
+            padding: 0;
+          }
+
+          .Mui-selected {
+            background-color: #ffa800;
+          }
+        }
+      }
+
+      .passengersList__itemBody-passportData {
+        padding: 25px 30px 25px 30px;
+        display: flex;
+        gap: 20px;
+        border-top: 1px dashed #928f94;
+        border-bottom: 1px dashed #928f94;
+
+        .UISelect {
+          width: 280px;
+          height: 50px;
+        }
+
+        .UIInput {
+          .MuiInputBase-root {
+            width: 280px;
+            height: 50px;
+          }
+        }
+      }
+
+      .passengersList__itemBody-btn {
+        display: flex;
+        justify-content: flex-end;
+        padding: 30px;
+
+        .UIButton {
+          color: #292929;
+          border-color: #292929;
+        }
+      }
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+
+  .passengersList__add {
+    margin-top: 40px;
+    height: 97px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+    background: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    .font-30 {
+      color: #292929;
+    }
+
+    .plus {
+      font-size: 30px;
+      color: var(--primary);
+    }
+  }
+
+  .passengersList-btn {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+  }
+}
