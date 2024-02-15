@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 import React from 'react';
 
 export default function UIButton({ label = 'Кнопка', color, variant, onClick }) {

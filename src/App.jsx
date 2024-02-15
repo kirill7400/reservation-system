@@ -1,7 +1,7 @@
 import './assets/style/App.scss';
 import React from 'react';
 import Main from "./components/Main";
-import {Route, Router, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import TrainSelection from "./components/TrainSelection/TrainSelection";
 import SeatSelection from "./components/SeatSelection/SeatSelection";
 import Passengers from "./components/Passengers/Passengers";

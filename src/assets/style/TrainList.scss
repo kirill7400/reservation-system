@@ -15,11 +15,27 @@
         background: var(--background);
       }
     }
+
+    .train-list__filters-showBy {
+      display: flex;
+      gap: 8px;
+    }
+
+    .showBy-active {
+      font-weight: 700;
+    }
+
+    .showBy {
+      cursor: pointer;
+    }
   }
 
   .train-list__items {
     width: 959px;
     box-sizing: border-box;
     margin-top: 47px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }

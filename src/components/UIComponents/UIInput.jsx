@@ -2,10 +2,10 @@ import TextField from '@mui/material/TextField';
 import React from 'react';
 import {InputAdornment} from "@mui/material";
 
-export default function UIInput({ placeholder='Введите...', value, setValue, adornment = null, label }) {
+export default function UIInput({ placeholder='Введите...', value, setValue, adornment = null, label, onClick, inputRef }) {
 
   return (
-    <div className='UIInput-div'>
+    <div className='UIInput-div' onClick={ onClick } ref={inputRef}>
       {label && <div className='UIInput-label'>{ label }</div>}
       <TextField
         className='UIInput'

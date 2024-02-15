@@ -1,0 +1,28 @@
+.UISearchRes {
+  display: none;
+  width: 170px;
+  height: 220px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 999;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 5px;
+  overflow: auto;
+  cursor: pointer;
+  padding-top: 8px;
+
+  .UISearchRes-item {
+    padding: 2px 15px;
+  }
+
+  .UISearchRes-item:hover {
+    background-color: #F5F4F6;
+    border-radius: 4px;
+  }
+
+  .UISearchRes-none {
+    padding: 10px;
+  }
+}

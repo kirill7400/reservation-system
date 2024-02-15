@@ -1,6 +1,6 @@
 import React from 'react';
 import Switch from "@mui/material/Switch";
-import { alpha, styled } from '@mui/material/styles';
+import {alpha, styled} from '@mui/material/styles';
 
 export default function UISwitch({ value, setValue }) {
 

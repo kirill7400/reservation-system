@@ -12,10 +12,30 @@ import sub5 from "../assets/icons/sub5.svg";
 import footer from "../assets/icons/footer.svg";
 import UIInput from "./UIComponents/UIInput";
 import UIButton from "./UIComponents/UIButton";
+import {subscribe} from "../common/api";
+import UIModal from "./UIComponents/UIModal";
 
 export default function Footer() {
+  const initModalConfig = {
+    show: false,
+    message: ''
+  }
+
+  const [email, setEmail] = useState('')
+  const [modalConfig, setModalConfig] = useState(initModalConfig)
+
+  const subscribeBtn = () => {
+    subscribe(email)
+      ?.then(res => {
+        if (res.response.code !== 200) setModalConfig({ show: true, message: 'Произошла ошибка!' })
+        else setModalConfig({ show: true, message: 'Вы успешно подписаны!' })
+      })
+  }
+
   return (
     <div className='main-footer' id="contacts">
+      <UIModal open={modalConfig} setOpen={setModalConfig}/>
+
       <div className='main-footer__contacts'>
         <div className='main-footer__contact-us'>
           <div className='font-30'>Свяжитесь с нами</div>
@@ -42,8 +62,8 @@ export default function Footer() {
           <div className='main-footer__contact-email'>
             <div className='font-24'>Будьте в курсе событий</div>
             <div className='main-footer__email-input'>
-              <UIInput placeholder="e-mail"/>
-              <UIButton label={'Отправить'} color={'white'} variant={'outlined'}/>
+              <UIInput placeholder="e-mail" value={ email } setValue={ setEmail }/>
+              <UIButton label={'Отправить'} color={'white'} variant={'outlined'} onClick={ subscribeBtn }/>
             </div>
           </div>
           <div className='main-footer__contact-social'>

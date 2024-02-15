@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../assets/style/Main.scss'
 import UIButton from "./UIComponents/UIButton";
 import icon1 from '../assets/icons/1.svg'

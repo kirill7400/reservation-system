@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import '../../assets/style/SeatList.scss'
 import filter1 from "../../assets/icons/filter1.svg";
 import UIButton from "../UIComponents/UIButton";

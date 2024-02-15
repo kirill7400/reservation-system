@@ -162,3 +162,20 @@
     color: var(--primary) !important;
   }
 }
+
+.MuiModal-root {
+  .MuiDialog-container {
+    .MuiPaper-root {
+      width: 400px;
+
+      .MuiButtonBase-root {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .MuiButtonBase-root:hover {
+        background-color: rgba(255, 168, 0, 0.5);
+      }
+    }
+  }
+}

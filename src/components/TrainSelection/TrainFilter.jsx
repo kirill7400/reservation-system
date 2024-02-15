@@ -1,31 +1,61 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../../assets/style/TrainFilter.scss'
 import UIDatePicker from "../UIComponents/UIDatePicker";
-import UISwitch from "../UIComponents/UISwitch";
-import option1 from '../../assets/icons/option1.svg'
-import option2 from '../../assets/icons/option2.svg'
-import option3 from '../../assets/icons/option3.svg'
-import option4 from '../../assets/icons/option4.svg'
-import option5 from '../../assets/icons/option5.svg'
-import option6 from '../../assets/icons/option6.svg'
+import option1 from "../../assets/icons/option1.svg";
+import option2 from "../../assets/icons/option2.svg";
+import option3 from "../../assets/icons/option3.svg";
+import option4 from "../../assets/icons/option4.svg";
+import option5 from "../../assets/icons/option5.svg";
+import option6 from "../../assets/icons/option6.svg";
 import filter1 from '../../assets/icons/filter1.svg'
 import filter2 from '../../assets/icons/filter2.svg'
 import filter3 from '../../assets/icons/filter3.svg'
 import filter6 from '../../assets/icons/filter6.svg'
 import UISlider from "../UIComponents/UISlider";
+import TrainFilterSwitch from "./TrainFilterSwitch";
+import {formatDate} from "../../common/utils";
 
-export default function TrainFilter() {
+export default function TrainFilter({ setFilters }) {
+  const initFilterSwitch = {
+    second: false,
+    third: false,
+    fourth: false,
+    first: false,
+    wifi: false,
+    express: false,
+  }
+
   const [dateFrom, setDateFrom] = useState('');
   const [dateTo, setDateTo] = useState('');
-
-  const [coupe, setCoupe] = useState(false);
-  const [price, setPrice] = useState([1920, 4500]);
-
+  const [price, setPrice] = useState([300, 3500]);
   const [timeFilter, setTimeFilter] = useState([3, 10]);
   const [plusTo, setPlusTo] = useState(false);
   const [plusFrom, setPlusFrom] = useState(false);
+  const [filterSwitch, setFilterSwitch] = useState(initFilterSwitch);
 
-  //console.log(price)
+  const switchVariants = [
+    { value: 'second', label: 'Купе', img: option1 },
+    { value: 'third', label: 'Плацкарт', img: option2 },
+    { value: 'fourth', label: 'Сидячий', img: option3 },
+    { value: 'first', label: 'Люкс', img: option4 },
+    { value: 'wifi', label: 'Wi-Fi', img: option5 },
+    { value: 'express', label: 'Экспресс', img: option6 }
+  ]
+
+  useEffect(() => {
+    let filters = {
+      ...filterSwitch,
+      dateFrom: formatDate(dateFrom),
+      dateTo: formatDate(dateTo),
+      price
+    }
+
+    setFilters(filters)
+  }, [filterSwitch, dateFrom, dateTo, price]);
+
+  const handlerSwitch = (v, param) => {
+    setFilterSwitch({...filterSwitch, [param]: v})
+  }
 
   return(
     <div className='train-filter'>
@@ -43,36 +73,14 @@ export default function TrainFilter() {
       <div className='train-filter__divider'></div>
 
       <div className='train-filter__options'>
-        <div className='train-filter__option-item'>
-          <img src={option1} alt="option1"/>
-          <div className='font-18 train-filter__option-text'>Купе</div>
-          <UISwitch value={coupe} setValue={setCoupe}/>
-        </div>
-        <div className='train-filter__option-item'>
-          <img src={option2} alt="option1"/>
-          <div className='font-18 train-filter__option-text'>Плацкарт</div>
-          <UISwitch value={coupe} setValue={setCoupe}/>
-        </div>
-        <div className='train-filter__option-item'>
-          <img src={option3} alt="option1"/>
-          <div className='font-18 train-filter__option-text'>Сидячий</div>
-          <UISwitch value={coupe} setValue={setCoupe}/>
-        </div>
-        <div className='train-filter__option-item'>
-          <img src={option4} alt="option1"/>
-          <div className='font-18 train-filter__option-text'>Люкс</div>
-          <UISwitch value={coupe} setValue={setCoupe}/>
-        </div>
-        <div className='train-filter__option-item'>
-          <img src={option5} alt="option1"/>
-          <div className='font-18 train-filter__option-text'>Wi-Fi</div>
-          <UISwitch value={coupe} setValue={setCoupe}/>
-        </div>
-        <div className='train-filter__option-item'>
-          <img src={option6} alt="option1"/>
-          <div className='font-18 train-filter__option-text'>Экспресс</div>
-          <UISwitch value={coupe} setValue={setCoupe}/>
-        </div>
+        { switchVariants.map((item, i)=>
+          <TrainFilterSwitch
+          key={ i }
+          i={ i }
+          value={filterSwitch[item.value]}
+          control={ item }
+          setValue={(v) => handlerSwitch(v,item.value)}
+          />) }
       </div>
 
       <div className='train-filter__divider'></div>
@@ -83,7 +91,7 @@ export default function TrainFilter() {
           <div className='font-18'>от</div>
           <div className='font-18'>до</div>
         </div>
-        <UISlider value={price} setValue={setPrice} min={ 1920 } max={ 7000 }/>
+        <UISlider value={price} setValue={setPrice} min={ 200 } max={ 5000 }/>
       </div>
 
       <div className='train-filter__divider'></div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Logo from "../Logo";
 import Step from "../Step";
 import Footer from "../Footer";
@@ -7,21 +7,55 @@ import TrainList from "./TrainList";
 import '../../assets/style/TrainSelection.scss'
 import LastTickets from "../LastTickets";
 import UIPagination from "../UIComponents/UIPagination";
+import {useLocation} from "react-router-dom";
+import {findRoutes} from "../../common/api";
+import UIModal from "../UIComponents/UIModal";
 
 export default function TrainSelection() {
+  const {state} = useLocation();
+  const [list, setList] = useState([])
+  const [leftFilters, setLeftFilters] = useState({})
+
+  const initModalConfig = {
+    show: false,
+    message: ''
+  }
+  const [modalConfig, setModalConfig] = useState(initModalConfig)
+
+  const setFilters = (items) => {
+    setLeftFilters({ ...items })
+  }
+
+  useEffect(() => {
+    setList([...state.result])
+    setLeftFilters({...state.selectedCity})
+    console.log('set!')
+  }, []);
+
+  const changeRoutes = (selectedCity) => {
+    findRoutes({ ...leftFilters, ...selectedCity  })
+      .then(data => {
+        if (data?.items?.length) {
+          setList([...data.items])
+        }
+        else setModalConfig({ show: true, message: 'По данному маршруту не найдено поездов!' })
+      })
+  }
+
   return (
     <div className='train-selection'>
-      <Logo type={'trainSelection'}/>
+      <UIModal open={modalConfig} setOpen={setModalConfig}/>
+      <Logo type={'trainSelection'} state={ state } changeRoutes={ changeRoutes }/>
       <Step num={ [1] }/>
 
       <div className='train-selection__main'>
         <div className='train-selection__main-leftMenu'>
-          <TrainFilter/>
+          <TrainFilter setFilters={setFilters}/>
           <LastTickets/>
         </div>
 
         <div className='train-selection__main-rightMenu'>
-          <TrainList/>
+          <TrainList list={list}/>
           <UIPagination/>
         </div>
       </div>

@@ -56,6 +56,8 @@
         min-width: 729px;
         background: rgba(41, 41, 41, 0.7);
         padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
 
         .main-logo__main-inputs-text {
           font-size: 30px;
@@ -82,6 +84,18 @@
             width: 45%;
           }
         }
+
+        .main-logo__main-inputs-itemBtn {
+          margin-top: auto;
+          margin-left: auto;
+
+          .UIButton {
+            width: 300px;
+            height: 50px;
+            color: black;
+            font-weight: 700;
+          }
+        }
       }
     }
 
@@ -101,20 +115,39 @@
         box-sizing: border-box;
         justify-content: space-between;
         gap: 15px;
+        flex-direction: column;
 
-        .main-logo__train-container {
-          .main-logo__train-input {
-            margin-top: 15px;
-            display: flex;
-            gap: 15px;
+        .main-logo__train-inputsItems {
+          width: 1400px;
+          display: flex;
+          justify-content: space-between;
 
-            .UISelect {
-              width: 325px;
+          .main-logo__train-container {
+            .main-logo__train-input {
+              margin-top: 15px;
+              display: flex;
+              gap: 15px;
+
+              .UIInput {
+                width: 325px;
+              }
+
+              .UIDatePicker {
+                width: 325px;
+              }
             }
+          }
+        }
 
-            .UIDatePicker {
-              width: 325px;
-            }
+        .main-logo__main-inputs-itemBtn {
+          margin-top: auto;
+          margin-left: auto;
+
+          .UIButton {
+            width: 300px;
+            height: 50px;
+            color: black;
+            font-weight: 700;
           }
         }
       }

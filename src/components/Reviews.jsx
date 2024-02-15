@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../assets/style/Reviews.scss'
 import image2 from "../assets/image/review-image2.png";
 import image1 from "../assets/image/review-image1.png";

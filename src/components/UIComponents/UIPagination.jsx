@@ -3,6 +3,6 @@ import Pagination from '@mui/material/Pagination';
 
 export default function UIPagination() {
   return(
-    <Pagination className='UIPagination' count={10} variant="outlined" shape="rounded" />
+    <Pagination className='UIPagination' count={1} variant="outlined" shape="rounded" />
   )
 }

@@ -33,6 +33,18 @@
       justify-content: space-between;
       margin: 54px 39px;
 
+      .train-list__center-left, .train-list__center-right {
+        width: 120px;
+      }
+
+      .train-list__center-left {
+        text-align: left;
+      }
+
+      .train-list__center-right {
+        text-align: right;
+      }
+
       .train-list__center-center {
         display: flex;
         flex-direction: column;
