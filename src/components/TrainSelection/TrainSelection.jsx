@@ -29,10 +29,11 @@ export default function TrainSelection() {
   useEffect(() => {
     setList([...state.result])
     setLeftFilters({...state.selectedCity})
-    console.log('set!')
   }, []);
 
   const changeRoutes = (selectedCity) => {
+    setLeftFilters({ ...leftFilters, ...selectedCity  })
+
     findRoutes({ ...leftFilters, ...selectedCity  })
       .then(data => {
         if (data?.items?.length) {
@@ -55,7 +56,7 @@ export default function TrainSelection() {
         </div>
 
         <div className='train-selection__main-rightMenu'>
-          <TrainList list={list}/>
+          <TrainList list={list} leftFilters={leftFilters}/>
           <UIPagination/>
         </div>
       </div>

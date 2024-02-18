@@ -7,14 +7,15 @@ import filter5 from "../../assets/icons/filter5.svg";
 import filter4 from "../../assets/icons/filter4.svg";
 import UIButton from "../UIComponents/UIButton";
 import {capitalized, formatTime, secInHour} from "../../common/utils";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
-export default function TrainItem({ item }) {
+export default function TrainItem({ item, leftFilters }) {
   //console.log(item)
   const navigate = useNavigate();
+  const {state} = useLocation();
 
   const goToSeat = () => {
-    navigate('/seat-selection', { state: {train: item}});
+    navigate('/seat-selection', { state: {...state, train: item, leftFilters}});
   }
 
   return(

@@ -3,7 +3,7 @@ import '../../assets/style/TrainList.scss'
 import UISelect from "../UIComponents/UISelect";
 import TrainItem from "./TrainItem";
 
-export default function TrainList({ list }) {
+export default function TrainList({ list, leftFilters }) {
   const sortBy = [
     {value: 1, label: 'времени'},
     {value: 2, label: 'стоимости'},
@@ -45,7 +45,7 @@ export default function TrainList({ list }) {
       </div>
 
       <div className='train-list__items'>
-        { list?.map((item, i) => <TrainItem item={item} key={i}/>) }
+        { list?.map((item, i) => <TrainItem item={item} leftFilters={leftFilters} key={i}/>) }
       </div>
     </div>
   )

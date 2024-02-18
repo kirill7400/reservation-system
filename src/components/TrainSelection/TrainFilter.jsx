@@ -15,7 +15,7 @@ import UISlider from "../UIComponents/UISlider";
 import TrainFilterSwitch from "./TrainFilterSwitch";
 import {formatDate} from "../../common/utils";
 
-export default function TrainFilter({ setFilters }) {
+export default function TrainFilter({ filters, setFilters }) {
   const initFilterSwitch = {
     second: false,
     third: false,
@@ -56,6 +56,15 @@ export default function TrainFilter({ setFilters }) {
   const handlerSwitch = (v, param) => {
     setFilterSwitch({...filterSwitch, [param]: v})
   }
+
+  useEffect(() => {
+    if (filters) {
+      setFilterSwitch({...filters})
+      filters?.dateFrom && setDateFrom(filters.dateFrom)
+      filters?.dateTo && setDateTo(filters?.dateTo)
+      filters?.price?.length && setPrice(filters.price)
+    }
+  }, [])
 
   return(
     <div className='train-filter'>

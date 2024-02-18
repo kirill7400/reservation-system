@@ -1,11 +1,6 @@
 .seat-list {
   width: 959px;
 
-  .seat-list__title {
-    color: #292929;
-    margin-bottom: 20px;
-  }
-
   .seat-list__item {
     margin-top: 29px;
     border: 1px solid #C4C4C4;
@@ -27,32 +22,51 @@
       }
     }
 
+    .left {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .right {
+      display: flex;
+      justify-content: flex-end;
+    }
+
     .seat-list__item-timeInfo {
       background: #F7F6F6;
       padding: 17px 36px;
       display: flex;
       justify-content: space-between;
 
-      .seat-list__item-trainInfo {
-        display: flex;
-        gap: 20px;
+        .seat-list__item-trainInfo {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
 
-        .font-24 {
-          color: #3E3C41;
-        }
+          .seat-list__item-city {
+            width: 150px;
 
-        .seat-list__item-text {
-          color: #928F94;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-        }
+          .font-24 {
+            color: #3E3C41;
+          }
 
-        .font-16 {
-          color: #292929;
+          .seat-list__item-text {
+            color: #928F94;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            display: flex;
+          }
+
+          .font-16 {
+            font-size: 15px;
+            color: #292929;
+          }
         }
       }
+
+
 
       .seat-list__item-timeFrom, .seat-list__item-timeTo {
         .font-24 {
@@ -168,7 +182,7 @@
 
           .seat-list__carriageNum-item {
             color: #000;
-            font-size: 24px;
+            font-size: 18px;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
@@ -200,7 +214,7 @@
 
           .seat-list__carriageInfo-titleNum {
             color: #292929;
-            font-size: 72px;
+            font-size: 30px;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
@@ -230,6 +244,7 @@
 
             .font-24, .font-18 {
               color: #000;
+              font-size: 18px;
             }
 
             .seat-list__carriageInfo-dataIcons {
@@ -266,6 +281,16 @@
             }
           }
 
+        }
+      }
+
+      .seat-list__selectSeat {
+        padding: 25px 40px;
+
+        .UISelect-div {
+          .UISelect {
+            width: 200px;
+          }
         }
       }
     }

@@ -32,8 +32,6 @@ export const findRoutes = (v) => {
   if (!v.fromId || !v.toId )
     return
 
-  console.log(v)
-
   return axios.get(FIND_ROUTES, {
     params: {
       from_city_id: v.fromId,
@@ -58,6 +56,13 @@ export const findRoutes = (v) => {
 
 export const lastRoutes = () => {
   return axios.get(LAST_ROUTES)
+    .then(({ data }) => data)
+    .catch(e => e)
+}
+
+export const seatsInfo = (id) => {
+  return axios.get(FIND_ROUTES + `/${id}/seats`, {
+  })
     .then(({ data }) => data)
     .catch(e => e)
 }

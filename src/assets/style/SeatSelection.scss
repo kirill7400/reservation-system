@@ -6,5 +6,16 @@
     display: flex;
     margin: 95px auto;
     gap: 86px;
+
+    .seat-list__title {
+      color: #292929;
+      margin-bottom: 20px;
+    }
+
+    .seat-selection-btn {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 50px;
+    }
   }
 }

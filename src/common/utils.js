@@ -23,13 +23,19 @@ export const formatTime = (v) => {
   let hour = date.getHours()
   let min = date.getMinutes()
 
+  hour = hour.toString().length === 1 ? '0' + hour : hour
+  min = min.toString().length === 1 ? '0' + min : min
+
   return `${hour}:${min}`
 }
 
-export const secInHour = (v) => {
+export const secInHour = (v, withStr = false) => {
   let min = v % 3600
   let hour = (v - min) / 3600
   min = min / 60
 
-  return `${hour}:${min}`
+  hour = hour.toString().length === 1 ? '0' + hour : hour
+  min = min.toString().length === 1 ? '0' + min : min
+
+  return withStr ? `${hour} ч. ${min} мин.` : `${hour}:${min}`
 }
