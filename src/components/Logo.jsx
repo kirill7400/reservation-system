@@ -2,15 +2,11 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import UIInput from "./UIComponents/UIInput";
 import UIDatePicker from "./UIComponents/UIDatePicker";
 import '../assets/style/Logo.scss'
-import UISelect from "./UIComponents/UISelect";
 import {HashLink as Link} from 'react-router-hash-link';
-import axios from "axios";
-import {GET_CITIES} from "../common/urls.config";
 import {debounce} from "@mui/material";
 import UISearchRes from "./UIComponents/UISearchRes";
 import {findRoutes, getCities} from "../common/api";
 import UIButton from "./UIComponents/UIButton";
-import {formatDate} from "../common/utils";
 import {useNavigate} from "react-router-dom";
 import UIModal from "./UIComponents/UIModal";
 

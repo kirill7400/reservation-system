@@ -1,0 +1,141 @@
+.paymentConfirmation {
+  .paymentConfirmation-items {
+    width: 959px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .paymentConfirmation-train, .paymentConfirmation-pass {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+      background: #fff;
+
+      .paymentConfirmation__title {
+        background: #fff;
+        padding: 40px 20px;
+        display: flex;
+
+        .font-30 {
+          color: #292929;
+          margin-left: 20px;
+        }
+      }
+
+
+    }
+
+    .finishData__item {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+      background: #fff;
+
+      .finishData__itemTitle {
+        padding: 40px 20px;
+        display: flex;
+
+        .font-30 {
+          color: #292929;
+          margin-left: 20px;
+        }
+      }
+
+      .finishData__itemPassengers {
+        border-top: 1px solid #928f94;
+        display: flex;
+
+        .finishData__itemPassengers-left {
+          width: 678px;
+
+          .finishData__itemPassenger {
+            border-right: 1px dashed #e5e5e5;
+            border-bottom: 1px dashed #e5e5e5;
+            display: flex;
+
+            .finishData__itemPassenger-left {
+              width: 150px;
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+            }
+
+            .finishData__itemPassenger-right {
+              padding: 40px 0;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+
+              .font-18 {
+                color: #292929
+              }
+
+              .gray {
+                color: #928f94;
+              }
+            }
+          }
+
+          .finishData__itemPassenger:last-child {
+            border-bottom: none;
+          }
+        }
+
+        .finishData__itemPassengers-right {
+          width: 281px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+          padding-bottom: 30px;
+
+          .finishData__itemPassengers-cost {
+            width: 220px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+          }
+
+          .font-30 {
+            color: #292929;
+          }
+
+          .UIButton {
+            color: #292929;
+            border-color: #292929;
+          }
+        }
+      }
+
+      .finishData__item-typePay {
+        display: flex;
+        border-top: 1px solid #928f94;
+
+        .finishData__item-typePayLeft {
+          width: 678px;
+          padding: 50px 20px;
+          border-right: 1px dashed #e5e5e5;
+        }
+
+        .finishData__item-typePayRight {
+          width: 281px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          padding-bottom: 20px;
+
+          .UIButton {
+            color: #292929;
+            border-color: #292929;
+          }
+        }
+      }
+    }
+  }
+
+  .paymentData-btn {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+  }
+}

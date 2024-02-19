@@ -13,7 +13,6 @@ import filter3 from '../../assets/icons/filter3.svg'
 import filter6 from '../../assets/icons/filter6.svg'
 import UISlider from "../UIComponents/UISlider";
 import TrainFilterSwitch from "./TrainFilterSwitch";
-import {formatDate} from "../../common/utils";
 
 export default function TrainFilter({ filters, setFilters }) {
   const initFilterSwitch = {
@@ -45,8 +44,8 @@ export default function TrainFilter({ filters, setFilters }) {
   useEffect(() => {
     let filters = {
       ...filterSwitch,
-      dateFrom: formatDate(dateFrom),
-      dateTo: formatDate(dateTo),
+      dateFrom,
+      dateTo,
       price
     }
 
@@ -59,7 +58,7 @@ export default function TrainFilter({ filters, setFilters }) {
 
   useEffect(() => {
     if (filters) {
-      setFilterSwitch({...filters})
+      setFilterSwitch(filters)
       filters?.dateFrom && setDateFrom(filters.dateFrom)
       filters?.dateTo && setDateTo(filters?.dateTo)
       filters?.price?.length && setPrice(filters.price)

@@ -1,15 +1,32 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../../assets/style/Payment.scss'
 import UIInput from "../UIComponents/UIInput";
 import UICheckbox from "../UIComponents/UICheckbox";
 import UIButton from "../UIComponents/UIButton";
 
-export default function PaymentData() {
+export default function PaymentData({ setPaymentData, setConf, setStep }) {
   const [surname, setSurname] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [telNum, setTelNum] = useState('');
+  const [email, setEmail] = useState('');
   const [onlinePay, setOnlinePay] = useState(false);
-  const [cashPay, setCashPay] = useState(false);
+  const [cashPay, setCashPay] = useState(true);
+
+  useEffect(() => {
+    let obj = {
+      surname,
+      firstName,
+      lastName,
+      telNum,
+      email,
+      onlinePay,
+      cashPay,
+    }
+
+    setPaymentData(obj)
+
+  }, [surname, firstName, lastName, telNum, email, onlinePay, cashPay])
 
   return(
     <div className='paymentData'>
@@ -24,10 +41,10 @@ export default function PaymentData() {
             <UIInput label="Отчество" value={surname} setValue={setSurname}/>
           </div>
           <div className='paymentData__itemBody-fio'>
-            <UIInput label="Контактный телефон" value={lastName} setValue={setLastName}/>
+            <UIInput label="Контактный телефон" value={telNum} setValue={setTelNum}/>
           </div>
           <div className='paymentData__itemBody-fio'>
-            <UIInput label="E-mail" value={lastName} setValue={setLastName}/>
+            <UIInput label="E-mail" value={email} setValue={setEmail}/>
           </div>
         </div>
 
@@ -50,7 +67,7 @@ export default function PaymentData() {
       </div>
 
       <div className='paymentData-btn'>
-        <UIButton label={'Купить билеты'} color={'primary'} variant={'contained'}/>
+        <UIButton label={'Купить билеты'} color={'primary'} variant={'contained'} onClick={setConf}/>
       </div>
     </div>
   )

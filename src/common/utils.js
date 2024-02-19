@@ -1,6 +1,6 @@
-export const formatDate = (v) => {
+export const formatDate = (v, pretty = false) => {
   if (!v)
-    return ''
+    return null
 
   let date = new Date(v)
   let year = date.getFullYear()
@@ -10,7 +10,7 @@ export const formatDate = (v) => {
   month = month.toString().length === 1 ? '0' + (month + 1) : month + 1
   day = day.toString().length === 1 ? '0' + day : day
 
-  return `${year}-${month}-${day}`
+  return pretty ? `${day}.${month}.${year}` : `${year}-${month}-${day}`
 }
 
 export const capitalized = (v) => {

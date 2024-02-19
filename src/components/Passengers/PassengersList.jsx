@@ -1,12 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../../assets/style/PassengersList.scss'
 import PassengerItem from "./PassengerItem";
 import UIButton from "../UIComponents/UIButton";
+import {useLocation, useNavigate} from "react-router-dom";
 
-export default function PassengersList() {
-  const [componentId, setComponentId] = useState(2)
+export default function PassengersList({ passengersData }) {
+  const {state} = useLocation();
+  const navigate = useNavigate();
+
+  const [componentId, setComponentId] = useState(0)
   const [data, setData] = useState({ passenger1: {} })
-  const [components, setComponent] = useState([{id: 1, value: <PassengerItem id={1} key={1} data={data} setData={setData}/>}])
+  const [components, setComponent] = useState([])
 
   const addPassenger = () => {
     setComponentId(componentId + 1)
@@ -15,6 +19,25 @@ export default function PassengersList() {
     setData({...data, [`passenger${i}`]: {}})
     setComponent([...components, {id: i, value: <PassengerItem id={i} key={i} data={data} setData={setData}/>}])
   }
+
+  const addToPay = () => {
+    navigate('/payment', { state: {...state, users: data}});
+  }
+
+  useEffect(() => {
+    console.log(passengersData)
+    let qty = +passengersData.arrival.adultQty + +passengersData.arrival.childrenQty
+    let i = 1
+    let arr = []
+
+    while (i <= qty) {
+      arr.push({id: i, value: <PassengerItem id={i} key={i} data={data} setData={setData}/>})
+      i++
+    }
+
+    setComponent([...arr])
+    setComponentId(++qty)
+  }, [])
 
   return(
     <div className='passengersList'>
@@ -26,7 +49,7 @@ export default function PassengersList() {
       </div>
 
       <div className='passengersList-btn'>
-        <UIButton label={'Далее'} color={'primary'} variant={'contained'}/>
+        <UIButton label={'Далее'} color={'primary'} variant={'contained'} onClick={addToPay}/>
       </div>
     </div>
   )

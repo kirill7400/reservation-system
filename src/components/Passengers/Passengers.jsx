@@ -5,8 +5,11 @@ import Step from "../Step";
 import Footer from "../Footer";
 import TripDetail from "../TripDetail";
 import PassengersList from "./PassengersList";
+import {useLocation} from "react-router-dom";
 
 export default function Passengers() {
+  const {state} = useLocation();
+
   return(
     <div className='passengers'>
       <Logo type={'passengers'}/>
@@ -14,11 +17,11 @@ export default function Passengers() {
 
       <div className='passengers__main'>
         <div className='passengers__main-leftMenu'>
-          <TripDetail/>
+          <TripDetail tripData={{...state.train, ...state.leftFilters, passInfo: state.passInfo}}/>
         </div>
 
         <div className='passengers__main-rightMenu'>
-          <PassengersList/>
+          <PassengersList passengersData={state.passInfo}/>
         </div>
       </div>
 

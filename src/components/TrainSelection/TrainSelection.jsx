@@ -23,18 +23,20 @@ export default function TrainSelection() {
   const [modalConfig, setModalConfig] = useState(initModalConfig)
 
   const setFilters = (items) => {
-    setLeftFilters({ ...items })
+    setLeftFilters(items)
   }
 
   useEffect(() => {
     setList([...state.result])
-    setLeftFilters({...state.selectedCity})
+    setLeftFilters(state.selectedCity)
   }, []);
 
   const changeRoutes = (selectedCity) => {
-    setLeftFilters({ ...leftFilters, ...selectedCity  })
+    let filters = { ...leftFilters, ...selectedCity  }
 
-    findRoutes({ ...leftFilters, ...selectedCity  })
+    setLeftFilters(filters)
+
+    findRoutes(filters)
       .then(data => {
         if (data?.items?.length) {
           setList([...data.items])

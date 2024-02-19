@@ -70,13 +70,6 @@ export default function SeatList({ train, trainType, setData }) {
   const [modalConfig, setModalConfig] = useState(initModalConfig)
 
   useEffect(() => {
-    let filters = {
-      have_first_class: false,
-      have_second_class : true,
-      have_third_class : false,
-      have_fourth_class : false,
-    }
-
     if (train['_id']) {
       seatsInfo(train['_id'])
         .then((res) => {

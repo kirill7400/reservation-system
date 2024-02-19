@@ -9,8 +9,7 @@ import UIButton from "../UIComponents/UIButton";
 import {capitalized, formatTime, secInHour} from "../../common/utils";
 import {useLocation, useNavigate} from "react-router-dom";
 
-export default function TrainItem({ item, leftFilters }) {
-  //console.log(item)
+export default function TrainItem({ item, leftFilters, viewBtn = true }) {
   const navigate = useNavigate();
   const {state} = useLocation();
 
@@ -122,7 +121,7 @@ export default function TrainItem({ item, leftFilters }) {
         <div className='train-list__right-icons'>
           <img src={filter4} alt="filter4"/>
         </div>
-        <UIButton label={'Выбрать места'} color={'primary'} variant={'contained'} onClick={ goToSeat }/>
+        {viewBtn && <UIButton label={'Выбрать места'} color={'primary'} variant={'contained'} onClick={ goToSeat }/>}
       </div>
     </div>
   )
